@@ -14,7 +14,7 @@ import java.nio.file.NotDirectoryException;
  * @author Exortions
  * @since 0.3.12.21
  */
-@SuppressWarnings({"unused", "DuplicateThrows"})
+@SuppressWarnings({"unused"})
 public class WorldManager {
 
     /**

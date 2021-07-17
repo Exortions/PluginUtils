@@ -1,9 +1,14 @@
 package com.exortions.pluginutils.example.listeners;
 
+import com.exortions.pluginutils.bossbar.BossbarUtils;
 import com.exortions.pluginutils.example.ExamplePlugin;
 import com.exortions.pluginutils.scoreboard.ScoreboardUtils;
 import com.exortions.pluginutils.tablist.TablistUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarFlag;
+import org.bukkit.boss.BarStyle;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -42,6 +47,15 @@ public class EventListener implements Listener {
         tablist.addHeaderLines("&e&lWelcome back, &e" + e.getPlayer(), "&eRun /help for a list of commands!");
         tablist.addFooterLines("&e&lStore&e: store.website.com");
         tablist.sendPacketToPlayer(e.getPlayer());
+
+        BossbarUtils bossbar = new BossbarUtils();
+        bossbar.setTitle(ChatColor.YELLOW + "Welcome back, " + ChatColor.AQUA + e.getPlayer().getDisplayName());
+        bossbar.setColor(BarColor.GREEN);
+        bossbar.setProgress(100);
+        bossbar.setStyle(BarStyle.SOLID);
+        bossbar.addFlag(BarFlag.DARKEN_SKY);
+        bossbar.setVisible(true);
+        bossbar.addPlayer(e.getPlayer());
     }
 
 }

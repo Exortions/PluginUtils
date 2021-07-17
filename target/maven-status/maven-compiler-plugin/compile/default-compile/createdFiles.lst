@@ -8,6 +8,7 @@ com/exortions/pluginutils/tablist/TablistUtils.class
 com/exortions/pluginutils/scoreboard/ScoreboardUtils.class
 com/exortions/pluginutils/command/CommandUtils.class
 com/exortions/pluginutils/item/ItemBuilder.class
+com/exortions/pluginutils/bossbar/BossbarUtils.class
 com/exortions/pluginutils/example/listeners/EventListener$1.class
 com/exortions/pluginutils/example/ExamplePlugin.class
 com/exortions/pluginutils/tablist/TablistUtils$1.class
