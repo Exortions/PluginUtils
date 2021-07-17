@@ -18,3 +18,4 @@ com/exortions/pluginutils/example/commands/ExplosiveStickCommand.class
 com/exortions/pluginutils/example/listeners/EventListener.class
 com/exortions/pluginutils/config/Configuration.class
 com/exortions/pluginutils/command/CommandInfo.class
+com/exortions/pluginutils/world/WorldManager.class
