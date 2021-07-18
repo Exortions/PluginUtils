@@ -5,6 +5,10 @@ import org.reflections.Reflections;
 
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * @author Exortions
+ * @since unknown
+ */
 public class CommandUtils {
 
     public static void registerCommands(JavaPlugin plugin, String commandPackageName){
