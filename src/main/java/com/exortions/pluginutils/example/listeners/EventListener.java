@@ -2,7 +2,9 @@ package com.exortions.pluginutils.example.listeners;
 
 import com.exortions.pluginutils.bossbar.BossbarUtils;
 import com.exortions.pluginutils.example.ExamplePlugin;
+import com.exortions.pluginutils.npc.PacketReader;
 import com.exortions.pluginutils.scoreboard.ScoreboardUtils;
+import com.exortions.pluginutils.scoreboard.TeamUtils;
 import com.exortions.pluginutils.tablist.TablistUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,12 +14,17 @@ import org.bukkit.boss.BarStyle;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class EventListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
+        // The next two lines are required for NPC Events to fire.
+        PacketReader reader = new PacketReader();
+        reader.inject(e.getPlayer(), ExamplePlugin.getPlugin().getNpcs());
+
         ScoreboardUtils scoreboard = new ScoreboardUtils(Bukkit.getScoreboardManager(), e.getPlayer());
         scoreboard.setTitle("&e&lSTATS");
         scoreboard.addLines("&e" + Bukkit.getServer().getOnlinePlayers().size() + "/" + Bukkit.getServer().getMaxPlayers(),
@@ -56,6 +63,16 @@ public class EventListener implements Listener {
         bossbar.addFlag(BarFlag.DARKEN_SKY);
         bossbar.setVisible(true);
         bossbar.addPlayer(e.getPlayer());
+
+        TeamUtils team = new TeamUtils("adminrank");
+        team.setPrefix("&c[ADMIN] ");
+        team.addPlayer(e.getPlayer());
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent e) {
+        PacketReader reader = new PacketReader();
+        reader.uninject(e.getPlayer());
     }
 
 }

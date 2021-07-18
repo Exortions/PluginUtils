@@ -19,6 +19,7 @@ public class Configuration {
 
     @Getter
     private final FileConfiguration config;
+    @Getter
     private final File file;
 
     /**
@@ -32,17 +33,25 @@ public class Configuration {
         config = YamlConfiguration.loadConfiguration(file);
     }
 
+    public boolean createFile() throws IOException {
+        return file.createNewFile();
+    }
+
     public Object get(String path) {
         return config.get(path);
     }
 
-    public void set(String path, Object o) {
+    public void set(String path, Object o, boolean save) {
         try {
             config.set(path, o);
-            config.save(file);
+            if(save) config.save(file);
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    public void save() throws IOException {
+        config.save(file);
     }
 
     public String getString(String path) {

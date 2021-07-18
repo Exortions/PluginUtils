@@ -17,6 +17,18 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
+ * An NPC Packet utility class.
+ * Usage:
+ *
+ * <code>
+ *      PlayerJoinEvent:
+ *      PacketReader reader = new PacketReader();
+ *      reader.inject(e.getPlayer());
+ *      PlayerQuitEvent:
+ *      PacketReader reader = new PacketReader();
+ *      reader.uninject(e.getPlayer());
+ * </code>
+ *
  * @author Exortions
  * @since 0.3.20.22
  */
@@ -26,18 +38,14 @@ public class PacketReader {
     Channel channel;
     public static Map<UUID, Channel> channels = new HashMap<>();
 
-    private HashMap<EntityPlayer, Integer> npcs;
+    private List<EntityPlayer> npcs;
 
     /**
-     * OnJoin:
-     * PacketReader reader = new PacketReader();
-     * reader.inject(e.getPlayer());
-     * OnQuit:
-     * PacketReader reader = new PacketReader();
-     * reader.uninject(e.getPlayer());
-     * @param player
+     * Inject packet reader into a player.
+     * @param player Player to inject packet reader to.
+     * @param npcs The list of current NPCs.
      */
-    public void inject(@NotNull Player player, @NotNull HashMap<EntityPlayer, Integer> npcs) {
+    public void inject(@NotNull Player player, @NotNull List<EntityPlayer> npcs) {
         CraftPlayer craftPlayer = (CraftPlayer) player;
         channel = craftPlayer.getHandle().playerConnection.networkManager.channel;
         channels.put(player.getUniqueId(), channel);
@@ -48,13 +56,17 @@ public class PacketReader {
 
         channel.pipeline().addAfter("decoder", "PacketInjector", new MessageToMessageDecoder<PacketPlayInUseEntity>() {
             @Override
-            protected void decode(ChannelHandlerContext channel, PacketPlayInUseEntity packet, List<Object> arg) throws Exception {
+            protected void decode(ChannelHandlerContext channel, PacketPlayInUseEntity packet, List<Object> arg) {
                 arg.add(packet);
                 readPacket(player, packet);
             }
         });
     }
 
+    /**
+     * Uninject the packet reader from the Player.
+     * @param player The player to uninject the packet reader from.
+     */
     public void uninject(Player player) {
         channel = channels.get(player.getUniqueId());
         if(channel.pipeline().get("PacketInjector") != null) channel.pipeline().remove("PacketInjector");
@@ -63,23 +75,27 @@ public class PacketReader {
     public void readPacket(Player player, PacketPlayInUseEntity packet) {
         if(packet.getClass().getSimpleName().equalsIgnoreCase("PacketPlayInUseEntity")) {
 
+            int id = (int) getValue(packet, "a");
+
             if(getValue(packet, "action").toString().equalsIgnoreCase("ATTACK")) {
-                // Left click
+               for (EntityPlayer npc : npcs) {
+                   if(npc.getId() == id) {
+                       Bukkit.getPluginManager().callEvent(new PlayerLeftClickNPCEvent(player, npc));
+                   }
+               }
             }
 
             if(getValue(packet, "d").toString().equalsIgnoreCase("OFF_HAND")) {
-                // Off hand
+                return;
             }
 
             if(getValue(packet, "action").toString().equalsIgnoreCase("INTERACT_AT")) {
-                // Left click
+                return;
             }
-
-            int id = (int) getValue(packet, "a");
 
             if(getValue(packet, "action").toString().equalsIgnoreCase("INTERACT")) {
                 // Right click
-                for (EntityPlayer npc : npcs.keySet()) {
+                for (EntityPlayer npc : npcs) {
                     if(npc.getId() == id) {
                         Bukkit.getPluginManager().callEvent(new PlayerRightClickNPCEvent(player, npc));
                     }

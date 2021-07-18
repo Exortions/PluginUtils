@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * @since 0.3.20.22
  */
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
-public class PlayerRightClickNPCEvent extends Event implements Cancellable {
+public class PlayerLeftClickNPCEvent extends Event implements Cancellable {
 
     private final Player player;
     private final EntityPlayer npc;
@@ -23,13 +23,9 @@ public class PlayerRightClickNPCEvent extends Event implements Cancellable {
 
     private static final HandlerList HANDLERS = new HandlerList();
 
-    public PlayerRightClickNPCEvent(Player player, EntityPlayer npc) {
+    public PlayerLeftClickNPCEvent(Player player, EntityPlayer npc) {
         this.player = player;
         this.npc = npc;
-    }
-
-    public Player getPlayer() {
-        return player;
     }
 
     @Override

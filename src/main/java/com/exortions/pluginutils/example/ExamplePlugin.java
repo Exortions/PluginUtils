@@ -2,10 +2,10 @@ package com.exortions.pluginutils.example;
 
 import com.exortions.pluginutils.command.CommandUtils;
 import com.exortions.pluginutils.listener.ListenerUtils;
-import com.exortions.pluginutils.npc.NPC;
 import com.exortions.pluginutils.startup.StartupUtils;
 import lombok.Getter;
 import lombok.Setter;
+import net.minecraft.server.v1_16_R3.EntityPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,7 +22,7 @@ public class ExamplePlugin extends JavaPlugin implements Listener {
     @Getter @Setter
     private HashMap<UUID, Integer> explosiveStickCooldowns;
     @Getter @Setter
-    private List<NPC> npcs;
+    private List<EntityPlayer> npcs;
 
     @Override
     public void onEnable() {

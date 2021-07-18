@@ -3,6 +3,7 @@ package com.exortions.pluginutils.npc;
 import com.exortions.pluginutils.mojang.SkinUtils;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import lombok.Getter;
 import net.minecraft.server.v1_16_R3.EntityPlayer;
 import net.minecraft.server.v1_16_R3.MinecraftServer;
 import net.minecraft.server.v1_16_R3.PlayerInteractManager;
@@ -32,6 +33,7 @@ public class NPC {
 
     private final GameProfile profile;
 
+    @Getter
     private final EntityPlayer npc;
 
     /**
