@@ -58,8 +58,7 @@ public class PacketReader {
             @Override
             protected void decode(ChannelHandlerContext channel, PacketPlayInUseEntity packet, List<Object> arg) {
                 arg.add(packet);
-                readPacket(player, packet);
-            }
+                readPacket(player, packet); }
         });
     }
 

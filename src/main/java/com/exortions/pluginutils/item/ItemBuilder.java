@@ -204,7 +204,8 @@ public class ItemBuilder {
      * @param lore The lore to add to the item.
      */
     public void addLore(String lore) {
-        List<String> ls = meta.getLore();
+        List<String> ls;
+        if (meta.getLore() != null) ls = meta.getLore(); else ls = new ArrayList<>();
         ls.add(ChatUtils.colorize(lore));
         meta.setLore(ls);
         item.setItemMeta(meta);
@@ -215,7 +216,8 @@ public class ItemBuilder {
      * @param lore The lore to add to the item.
      */
     public void addLore(String... lore) {
-        List<String> ls = meta.getLore();
+        List<String> ls;
+        if (meta.getLore() != null) ls = meta.getLore(); else ls = new ArrayList<>();
         for(String s : lore) {
             ls.add(ChatUtils.colorize(s));
         }

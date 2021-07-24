@@ -1,5 +1,7 @@
 package com.exortions.pluginutils.tablist;
 
+import com.exortions.pluginutils.annotation.LegacyMinecraft;
+import com.exortions.pluginutils.plugin.MinecraftVersion;
 import net.minecraft.server.v1_16_R3.ChatComponentText;
 import net.minecraft.server.v1_16_R3.PacketPlayOutPlayerListHeaderFooter;
 import org.bukkit.Bukkit;
@@ -15,10 +17,14 @@ import java.util.List;
 
 /**
  * Tablist utility class.
+ * In later versions of minecraft,
+ * use Player#setPlayerListHeaderFooter instead.
  * @author Exortions
  * @since 0.3.8.6
  */
+@Deprecated
 @SuppressWarnings("unused")
+@LegacyMinecraft(supportedVersions = MinecraftVersion.MINECRAFT_1_12_AND_BELOW, unsupportedVersions = MinecraftVersion.MINECRAFT_1_16_TO_1_13)
 public class TablistUtils {
 
     private final PacketPlayOutPlayerListHeaderFooter packet;

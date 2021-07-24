@@ -1,5 +1,6 @@
 package com.exortions.pluginutils.startup;
 
+import com.exortions.pluginutils.plugin.MinecraftPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
@@ -35,29 +36,31 @@ public class StartupUtils {
     /**
      * Log dependencies if dependencies are found or not, disables plugin if they arent found
      * @param plugin The plugin
-     * @param pluginName The plugin name
      * @param dependencies The dependencies
      */
-    public static void loadDependencyInjections(@NotNull JavaPlugin plugin, @NotNull String pluginName, @NotNull Logger logger, @NotNull PluginManager pluginManager, @NotNull String... dependencies){
+    public static void loadDependencyInjections(@NotNull JavaPlugin plugin, @NotNull Logger logger, @NotNull PluginManager pluginManager, @NotNull String... dependencies){
+        if (!(plugin instanceof MinecraftPlugin)) return;
         for (String dependency : dependencies) {
             if (Bukkit.getPluginManager().getPlugin(dependency) == null){
-                logger.log(Level.SEVERE, "[" + pluginName + "] Couldn't find dependency " + dependency + "! It is required to run this plugin.");
+                logger.log(Level.SEVERE, "[" + plugin + "] Couldn't find dependency " + dependency + "! It is required to run this plugin.");
                 pluginManager.disablePlugin(plugin);
             } else {
-                logger.log(Level.INFO, "[" + pluginName + "] Successfully found dependency " + dependency + "!");
+                logger.log(Level.INFO, "[" + plugin + "] Successfully found dependency " + dependency + "!");
             }
         }
     }
 
-    public static void logEnable(@NotNull Logger logger, @NotNull String pluginName){
+    public static void logEnable(@NotNull Logger logger, @NotNull JavaPlugin plugin){
+        if (!(plugin instanceof MinecraftPlugin)) return;
         logger.log(Level.INFO, " ");
-        logger.log(Level.INFO, "" + ChatColor.GREEN + ChatColor.BOLD + "[" + pluginName + "] Plugin enabled!");
+        logger.log(Level.INFO, "" + ChatColor.GREEN + ChatColor.BOLD + "[" + ((MinecraftPlugin) plugin).getPluginName() + "] Plugin enabled!");
         logger.log(Level.INFO, "");
     }
 
-    public static void logDisable(@NotNull Logger logger, @NotNull String pluginName){
+    public static void logDisable(@NotNull Logger logger, @NotNull JavaPlugin plugin){
+        if (!(plugin instanceof MinecraftPlugin)) return;
         logger.log(Level.INFO, " ");
-        logger.log(Level.INFO, "" + ChatColor.RED + ChatColor.BOLD + "[" + pluginName + "] Plugin disabled!");
+        logger.log(Level.INFO, "" + ChatColor.RED + ChatColor.BOLD + "[" + ((MinecraftPlugin) plugin).getPluginName()+ "] Plugin disabled!");
         logger.log(Level.INFO, "");
     }
 
