@@ -4,6 +4,7 @@ com\exortions\pluginutils\example\commands\ExplosiveStickCommand.class
 com\exortions\pluginutils\npc\PlayerLeftClickNPCEvent.class
 com\exortions\pluginutils\mojang\SkinUtils$1.class
 com\exortions\pluginutils\database\mysql\MySQLDatabase.class
+com\exortions\pluginutils\string\StringUtils.class
 com\exortions\pluginutils\world\WorldManager.class
 com\exortions\pluginutils\tablist\Tablist.class
 com\exortions\pluginutils\npc\PacketReader.class
@@ -11,6 +12,7 @@ com\exortions\pluginutils\tablist\Tablist$1.class
 com\exortions\pluginutils\bossbar\Bossbar.class
 com\exortions\pluginutils\scoreboard\Team.class
 com\exortions\pluginutils\npc\PacketReader$1.class
+com\exortions\pluginutils\event\Event.class
 com\exortions\pluginutils\example\ExamplePlugin.class
 com\exortions\pluginutils\tablist\Tablist$2.class
 com\exortions\pluginutils\database\mysql\MySQLConnection.class

@@ -9,6 +9,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * @author Exortions
+ * @since unknown
+ */
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public abstract class PluginCommand implements CommandExecutor {
 
     private final CommandInfo commandInfo;

@@ -7,6 +7,11 @@ import org.reflections.Reflections;
 
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * @author Exortions
+ * @since unknown
+ */
+@SuppressWarnings("unused")
 public class ListenerUtils {
 
     public static void registerAllListeners(JavaPlugin plugin, String packageName, PluginManager pluginManager){

@@ -5,6 +5,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author Exortions
+ * @since unknown
+ */
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class CollectionUtils {
 
     public static List<String> stringList(String... strings) {

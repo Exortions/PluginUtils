@@ -8,6 +8,11 @@ import org.bukkit.entity.Player;
 
 import java.text.DecimalFormat;
 
+/**
+ * @author Exortions
+ * @since unknown
+ */
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class ChatUtils {
 
     public static String colorize(String string){

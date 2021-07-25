@@ -11,6 +11,7 @@ import java.util.List;
  * @author Exortions
  * @since 0.4.24.23
  */
+@SuppressWarnings("unused")
 public class Title {
 
     private String text;

@@ -13,6 +13,7 @@ import java.net.URL;
  * @author Exortions
  * @since 0.3.18.22
  */
+@SuppressWarnings("unused")
 public class SkinUtils {
 
     public static String getPropertyByPlayer(Player player, String property) throws IOException {

@@ -12,6 +12,7 @@ import java.util.List;
  * @author Exortions
  * @since 0.4.24.23
  */
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class Actionbar {
 
     private String text;

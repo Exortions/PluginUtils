@@ -11,6 +11,7 @@ import java.util.Objects;
  * @author Exortions
  * @since unknown
  */
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class CommandUtils {
 
     public static void registerCommands(JavaPlugin plugin, String commandPackageName){
