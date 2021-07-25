@@ -7,6 +7,7 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.ArrayList;
 
 /**
+ * @author MorkaZ, Exortions
  * @since 0.4.24.23
  */
 @SuppressWarnings({"unused", "UnusedReturnValue", "unchecked"})
@@ -17,20 +18,33 @@ public abstract class SQLScheduler{
 	private Boolean processing = false;
 	private BukkitTask schedulerTask;
 
-
+	/**
+	 * Default constructor
+	 * @param plugin The spigot plugin
+	 */
 	public SQLScheduler(Plugin plugin) {
 		this.plugin = plugin;
 		this.startScheduler();
 	}
 
+	/**
+	 * Cancels the scheduled task.
+	 */
 	public void cancelSchedulerTask() {
 		this.schedulerTask.cancel();
 	}
 
+	/**
+	 * Gets the scheduled task.
+	 * @return The scheduled task.
+	 */
 	public BukkitTask getSchedulerTask() {
 		return this.schedulerTask;
 	}
 
+	/**
+	 * Reloads the scheduler.
+	 */
 	public void reloadScheduler() {
 		schedulerTask.cancel();
 		runnableList.clear();
@@ -38,6 +52,10 @@ public abstract class SQLScheduler{
 		startScheduler();
 	}
 
+	/**
+	 * Schedules a new runnable.
+	 * @param runnable The runnable to schedule.
+	 */
 	public void scheduleRunnable(Runnable runnable) {
 		if (!processing) {
 			runnableList.add(runnable);
@@ -46,6 +64,10 @@ public abstract class SQLScheduler{
 		}
 	}
 
+	/**
+	 * Starts the scheduler.
+	 * @return The scheduler.
+	 */
 	public BukkitTask startScheduler() {
 		this.schedulerTask = new BukkitRunnable() {
 			@Override

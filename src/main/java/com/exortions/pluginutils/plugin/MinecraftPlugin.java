@@ -9,7 +9,7 @@ public interface MinecraftPlugin {
     void registerCommands();
 
     String getPluginName();
-    double getPluginVersion();
+    String getPluginVersion();
     MinecraftVersion getPluginMinecraftVersion();
 
     JavaVersion getJavaVersion();

@@ -21,6 +21,7 @@ public class Startup {
     /**
      * Log dependencies if dependencies are found or not
      * @param pluginName The plugin name
+     * @param logger The Bukkit logger.
      * @param dependencies The dependencies
      */
     public static void loadDependencyInjections(@NotNull String pluginName, @NotNull Logger logger, @NotNull String... dependencies){
@@ -36,6 +37,8 @@ public class Startup {
     /**
      * Log dependencies if dependencies are found or not, disables plugin if they arent found
      * @param plugin The plugin
+     * @param logger The Bukkit logger.
+     * @param pluginManager The Bukkit plugin manager.
      * @param dependencies The dependencies
      */
     public static void loadDependencyInjections(@NotNull JavaPlugin plugin, @NotNull Logger logger, @NotNull PluginManager pluginManager, @NotNull String... dependencies){
@@ -50,6 +53,11 @@ public class Startup {
         }
     }
 
+    /**
+     * Logs when the plugin is enabled.
+     * @param logger The Bukkit logger.
+     * @param plugin The spigot plugin.
+     */
     public static void logEnable(@NotNull Logger logger, @NotNull JavaPlugin plugin){
         if (!(plugin instanceof MinecraftPlugin)) return;
         logger.log(Level.INFO, " ");
@@ -57,6 +65,11 @@ public class Startup {
         logger.log(Level.INFO, "");
     }
 
+    /**
+     * Logs when the plugin is disabled.
+     * @param logger The Bukkit logger.
+     * @param plugin The spigot plugin.
+     */
     public static void logDisable(@NotNull Logger logger, @NotNull JavaPlugin plugin){
         if (!(plugin instanceof MinecraftPlugin)) return;
         logger.log(Level.INFO, " ");

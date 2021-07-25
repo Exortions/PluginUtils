@@ -16,13 +16,15 @@ import java.sql.Statement;
 import java.util.List;
 
 /**
+ * @author MorkaZ, Exortions
  * @since 0.4.24.23
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class MySQLDatabase extends SQLScheduler implements SQLDatabase {
 
+
 	private MySQLConnection mySQLConnection;
-	private final Plugin plugin;
+	private Plugin plugin;
 
 
 	public MySQLDatabase(Plugin plugin) {
@@ -41,15 +43,17 @@ public class MySQLDatabase extends SQLScheduler implements SQLDatabase {
 			Bukkit.getLogger().warning("["+plugin.getName()+"/MoxLibrary] MySQLConnection object is null. It must be initialized by method createConnection(data..).");
 			return;
 		}
-		super.scheduleRunnable(() -> {
-			try {
-				Statement statement = mySQLConnection.getConnection().createStatement();
-				statement.executeUpdate(query);
+		super.scheduleRunnable(new Runnable() {
+			public void run() {
+				try {
+					Statement statement = mySQLConnection.getConnection().createStatement();
+					statement.executeUpdate(query);
 
-			} catch (SQLException e) {
-				e.printStackTrace();
-				Bukkit.getConsoleSender().sendMessage("[MoxLibrary] SQL query error: "+e.getSQLState()+" ---- "+e.getCause()
-						+" ---- "+e.getMessage()+" ---- "+e.getErrorCode()+" ---- USED QUERY:"+query);
+				} catch (SQLException e) {
+					e.printStackTrace();
+					Bukkit.getConsoleSender().sendMessage("[MoxLibrary] SQL query error: "+e.getSQLState()+" ---- "+e.getCause()
+							+" ---- "+e.getMessage()+" ---- "+e.getErrorCode()+" ---- USED QUERY:"+query);
+				}
 			}
 		});
 	}
@@ -121,7 +125,10 @@ public class MySQLDatabase extends SQLScheduler implements SQLDatabase {
 			if (mySQLConnection.getConnection().isClosed()){
 				return null;
 			}
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return null;
+		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -251,6 +258,5 @@ public class MySQLDatabase extends SQLScheduler implements SQLDatabase {
 		String query = QueryUtils.constructQueryRowsRemove(table, keyColumn, keyValue, limit, SQLDatabaseType.MYSQL);
 		this.updateAsync(query);
 	}
-
 
 }

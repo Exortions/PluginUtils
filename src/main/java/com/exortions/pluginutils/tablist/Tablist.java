@@ -39,6 +39,7 @@ public class Tablist {
      * class, only needs to be called
      * on server load.
      * @param plugin The plugin of which is running the Tablist
+     * @param sendToAllPlayers If the tablist should be sent to all players.
      */
     public Tablist(JavaPlugin plugin, boolean sendToAllPlayers) {
         headers = new ArrayList<>();
@@ -74,6 +75,7 @@ public class Tablist {
      * class, only needs to be called
      * on server load.
      * @param plugin The plugin of which is running the Tablist
+     * @param player The player to send the tablist to.
      */
     public Tablist(JavaPlugin plugin, Player player) {
         headers = new ArrayList<>();
@@ -106,7 +108,7 @@ public class Tablist {
 
     /**
      * Add a line to the header
-     * @param s The line to add to the header - Use &
+     * @param s The line to add to the header
      */
     public void addHeaderLine(String s) {
         Object o = new ChatComponentText(s.replace('&', '§'));
@@ -149,7 +151,7 @@ public class Tablist {
 
     /**
      * Add a line to the footer
-     * @param s The line to add to the footer - Use &
+     * @param s The line to add to the footer
      */
     public void addFooterLine(String s) {
         Object o = new ChatComponentText(s.replace('&', '§'));

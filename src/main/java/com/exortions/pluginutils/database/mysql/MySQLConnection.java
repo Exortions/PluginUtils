@@ -3,6 +3,7 @@ package com.exortions.pluginutils.database.mysql;
 import java.sql.*;
 
 /**
+ * @author MorkaZ, Exortions
  * @since 0.4.24.23
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})

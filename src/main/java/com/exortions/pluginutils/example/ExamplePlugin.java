@@ -4,6 +4,7 @@ import com.exortions.pluginutils.command.CommandUtils;
 import com.exortions.pluginutils.listener.ListenerUtils;
 import com.exortions.pluginutils.plugin.MinecraftPlugin;
 import com.exortions.pluginutils.plugin.MinecraftVersion;
+import com.exortions.pluginutils.plugin.SpigotPlugin;
 import com.exortions.pluginutils.startup.Startup;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-public class ExamplePlugin extends JavaPlugin implements Listener, MinecraftPlugin {
+public class ExamplePlugin extends SpigotPlugin implements Listener {
 
     private static ExamplePlugin plugin;
 
@@ -28,20 +29,11 @@ public class ExamplePlugin extends JavaPlugin implements Listener, MinecraftPlug
     private List<EntityPlayer> npcs;
 
     @Override
-    public void registerListeners() {
-
-    }
-
-    @Override
-    public void registerCommands() {
-
-    }
-
-    @Override
     public void onEnable() {
         // Check if ProtocolLib and PlaceholderAPI exist.
         Startup.loadDependencyInjections(this, Bukkit.getLogger(), Bukkit.getPluginManager(), "ProtocolLib", "PlaceholderAPI");
 
+        instance = this;
         plugin = this;
 
         saveDefaultConfig();
@@ -61,6 +53,16 @@ public class ExamplePlugin extends JavaPlugin implements Listener, MinecraftPlug
         Startup.logDisable(Bukkit.getLogger(), this);
     }
 
+    @Override
+    public void registerListeners() {
+
+    }
+
+    @Override
+    public void registerCommands() {
+
+    }
+
     public static ExamplePlugin getPlugin() {
         return plugin;
     }
@@ -71,8 +73,8 @@ public class ExamplePlugin extends JavaPlugin implements Listener, MinecraftPlug
     }
 
     @Override
-    public double getPluginVersion() {
-        return 1.0;
+    public String getPluginVersion() {
+        return "1.0";
     }
 
     @Override

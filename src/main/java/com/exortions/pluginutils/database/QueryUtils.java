@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @author MorkaZ
  * @since 0.4.24.23
  */
 @SuppressWarnings("all")
@@ -123,11 +124,6 @@ public class QueryUtils {
 		return query;
 	}
 
-	/**
-		@param indexColumn - column to "WHERE" query's part
-		@param indexValue - value to "WHERE" query's part
-		@param valueColumn - column that will be NULLed in row
-	 */
 	public static String constructQueryValueRemove(String table, String indexColumn, Object indexValue, String valueColumn, SQLDatabaseType databaseType){
 		String query;
 		if (indexValue instanceof Number){
@@ -336,10 +332,6 @@ public class QueryUtils {
 		return queryList;
 	}
 
-
-	/**
-	 * <p>If databse is not MySQL then REMEMBER to put primary table name on first place</p>
-	 */
 	public static List<String> constructQueryMultipleValuesSet(String table, List<Pair<String, Object>> pairs, Boolean hasTableUniqueKey, SQLDatabaseType databaseType){
 		List<String> queryList = new ArrayList<>();
 		String flatColumns = "(";
