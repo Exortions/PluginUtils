@@ -6,7 +6,7 @@
 
     <groupId>com.exortions</groupId>
     <artifactId>ExosPluginUtils</artifactId>
-    <version>0.4.26.23</version>
+    <version>0.4.27.23</version>
         <description>ExosPluginUtils, or PluginUtils for short, is a simple, easy-to-use
             library that saves many Minecraft Spigot developers a lot of time when creating
             plugins. It allows Spigot developers to create a lot of NMS
