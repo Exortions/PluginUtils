@@ -3,7 +3,6 @@ package com.exortions.pluginutils.scoreboard;
 import com.exortions.pluginutils.chat.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.Team;
 
 import java.util.Objects;
 import java.util.Set;
@@ -14,11 +13,11 @@ import java.util.Set;
  * @since 0.3.21.22
  */
 @SuppressWarnings("unused")
-public class TeamUtils {
+public class Team {
 
-    private final Team team;
+    private final org.bukkit.scoreboard.Team team;
 
-    public TeamUtils(String name) {
+    public Team(String name) {
         team = Objects.requireNonNull(Bukkit.getScoreboardManager()).getNewScoreboard().registerNewTeam(name);
     }
 

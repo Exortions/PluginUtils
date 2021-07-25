@@ -4,7 +4,7 @@ import com.exortions.pluginutils.command.CommandUtils;
 import com.exortions.pluginutils.listener.ListenerUtils;
 import com.exortions.pluginutils.plugin.MinecraftPlugin;
 import com.exortions.pluginutils.plugin.MinecraftVersion;
-import com.exortions.pluginutils.startup.StartupUtils;
+import com.exortions.pluginutils.startup.Startup;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.server.v1_16_R3.EntityPlayer;
@@ -40,7 +40,7 @@ public class ExamplePlugin extends JavaPlugin implements Listener, MinecraftPlug
     @Override
     public void onEnable() {
         // Check if ProtocolLib and PlaceholderAPI exist.
-        StartupUtils.loadDependencyInjections(this, Bukkit.getLogger(), Bukkit.getPluginManager(), "ProtocolLib", "PlaceholderAPI");
+        Startup.loadDependencyInjections(this, Bukkit.getLogger(), Bukkit.getPluginManager(), "ProtocolLib", "PlaceholderAPI");
 
         plugin = this;
 
@@ -53,12 +53,12 @@ public class ExamplePlugin extends JavaPlugin implements Listener, MinecraftPlug
         CommandUtils.registerCommands(this, ".commands");
         // Automatically register all listeners in .listeners package
         ListenerUtils.registerAllListeners(this, ".listeners", Bukkit.getPluginManager());
-        StartupUtils.logEnable(Bukkit.getLogger(), this);
+        Startup.logEnable(Bukkit.getLogger(), this);
     }
 
     @Override
     public void onDisable() {
-        StartupUtils.logDisable(Bukkit.getLogger(), this);
+        Startup.logDisable(Bukkit.getLogger(), this);
     }
 
     public static ExamplePlugin getPlugin() {

@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @since 1.0.0.0
  */
 @SuppressWarnings("unused")
-public class StartupUtils {
+public class Startup {
 
     /**
      * Log dependencies if dependencies are found or not

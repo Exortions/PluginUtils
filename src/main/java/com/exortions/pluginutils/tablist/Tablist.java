@@ -25,7 +25,7 @@ import java.util.List;
 @Deprecated
 @SuppressWarnings("unused")
 @LegacyMinecraft(supportedVersions = MinecraftVersion.MINECRAFT_1_12_AND_BELOW, unsupportedVersions = MinecraftVersion.MINECRAFT_1_16_TO_1_13)
-public class TablistUtils {
+public class Tablist {
 
     private final PacketPlayOutPlayerListHeaderFooter packet;
     private Field a;
@@ -40,7 +40,7 @@ public class TablistUtils {
      * on server load.
      * @param plugin The plugin of which is running the Tablist
      */
-    public TablistUtils(JavaPlugin plugin, boolean sendToAllPlayers) {
+    public Tablist(JavaPlugin plugin, boolean sendToAllPlayers) {
         headers = new ArrayList<>();
         footers = new ArrayList<>();
         packet = new PacketPlayOutPlayerListHeaderFooter();
@@ -75,7 +75,7 @@ public class TablistUtils {
      * on server load.
      * @param plugin The plugin of which is running the Tablist
      */
-    public TablistUtils(JavaPlugin plugin, Player player) {
+    public Tablist(JavaPlugin plugin, Player player) {
         headers = new ArrayList<>();
         footers = new ArrayList<>();
         packet = new PacketPlayOutPlayerListHeaderFooter();

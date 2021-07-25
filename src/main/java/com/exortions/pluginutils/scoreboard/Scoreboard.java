@@ -14,9 +14,9 @@ import java.util.List;
  * @since 0.3.4.8b1
  */
 @SuppressWarnings("unused")
-public class ScoreboardUtils {
+public class Scoreboard {
 
-    private final Scoreboard board;
+    private final org.bukkit.scoreboard.Scoreboard board;
     private Objective objective;
 
     private final Player player;
@@ -30,7 +30,7 @@ public class ScoreboardUtils {
      * @param manager The scoreboard manager (Use Bukkit.getScoreboardManager())
      * @param player The player
      */
-    public ScoreboardUtils(ScoreboardManager manager, Player player) {
+    public Scoreboard(ScoreboardManager manager, Player player) {
         if(manager == null) throw new NullPointerException("ScoreboardManager cannot be null!");
         board = manager.getNewScoreboard();
         objective = createObjective();

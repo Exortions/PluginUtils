@@ -14,11 +14,11 @@ import java.util.List;
  * @since 0.3.14.22
  */
 @SuppressWarnings("unused")
-public class BossbarUtils {
+public class Bossbar {
 
     private final BossBar bossbar;
 
-    public BossbarUtils() {
+    public Bossbar() {
         bossbar = Bukkit.createBossBar("Bossbar", BarColor.PURPLE, BarStyle.SOLID);
     }
 

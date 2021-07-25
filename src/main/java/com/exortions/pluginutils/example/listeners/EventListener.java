@@ -1,11 +1,11 @@
 package com.exortions.pluginutils.example.listeners;
 
-import com.exortions.pluginutils.bossbar.BossbarUtils;
+import com.exortions.pluginutils.bossbar.Bossbar;
 import com.exortions.pluginutils.example.ExamplePlugin;
 import com.exortions.pluginutils.npc.PacketReader;
-import com.exortions.pluginutils.scoreboard.ScoreboardUtils;
-import com.exortions.pluginutils.scoreboard.TeamUtils;
-import com.exortions.pluginutils.tablist.TablistUtils;
+import com.exortions.pluginutils.scoreboard.Scoreboard;
+import com.exortions.pluginutils.scoreboard.Team;
+import com.exortions.pluginutils.tablist.Tablist;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
@@ -25,7 +25,7 @@ public class EventListener implements Listener {
         PacketReader reader = new PacketReader();
         reader.inject(e.getPlayer(), ExamplePlugin.getPlugin().getNpcs());
 
-        ScoreboardUtils scoreboard = new ScoreboardUtils(Bukkit.getScoreboardManager(), e.getPlayer());
+        Scoreboard scoreboard = new Scoreboard(Bukkit.getScoreboardManager(), e.getPlayer());
         scoreboard.setTitle("&e&lSTATS");
         scoreboard.addLines("&e" + Bukkit.getServer().getOnlinePlayers().size() + "/" + Bukkit.getServer().getMaxPlayers(),
                 " ", // Each space needs a unique amount of spaces or else one won't display!
@@ -50,12 +50,12 @@ public class EventListener implements Listener {
             }
         }.runTaskLater(ExamplePlugin.getPlugin(), 100);
 
-        TablistUtils tablist = new TablistUtils(ExamplePlugin.getPlugin(), false);
+        Tablist tablist = new Tablist(ExamplePlugin.getPlugin(), false);
         tablist.addHeaderLines("&e&lWelcome back, &e" + e.getPlayer(), "&eRun /help for a list of commands!");
         tablist.addFooterLines("&e&lStore&e: store.website.com");
         tablist.sendPacketToPlayer(e.getPlayer());
 
-        BossbarUtils bossbar = new BossbarUtils();
+        Bossbar bossbar = new Bossbar();
         bossbar.setTitle(ChatColor.YELLOW + "Welcome back, " + ChatColor.AQUA + e.getPlayer().getDisplayName());
         bossbar.setColor(BarColor.GREEN);
         bossbar.setProgress(100);
@@ -64,7 +64,7 @@ public class EventListener implements Listener {
         bossbar.setVisible(true);
         bossbar.addPlayer(e.getPlayer());
 
-        TeamUtils team = new TeamUtils("adminrank");
+        Team team = new Team("adminrank");
         team.setPrefix("&c[ADMIN] ");
         team.addPlayer(e.getPlayer());
     }
