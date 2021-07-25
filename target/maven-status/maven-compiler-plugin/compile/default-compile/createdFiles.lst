@@ -23,6 +23,7 @@ com\exortions\pluginutils\database\SQLDatabase.class
 com\exortions\pluginutils\mojang\SkinUtils.class
 com\exortions\pluginutils\database\mysql\MySQLData.class
 com\exortions\pluginutils\example\commands\HologramCommand.class
+com\exortions\pluginutils\database\MySQLResultSetUtils.class
 com\exortions\pluginutils\example\listeners\EventListener$2.class
 com\exortions\pluginutils\example\commands\HealCommand.class
 com\exortions\pluginutils\command\PluginCommand.class
