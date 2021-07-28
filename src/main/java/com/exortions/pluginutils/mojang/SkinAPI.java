@@ -14,7 +14,7 @@ import java.net.URL;
  * @since 0.3.18.22
  */
 @SuppressWarnings("unused")
-public class SkinUtils {
+public class SkinAPI {
 
     public static String getPropertyByPlayer(Player player, String property) throws IOException {
         URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + player.getDisplayName());

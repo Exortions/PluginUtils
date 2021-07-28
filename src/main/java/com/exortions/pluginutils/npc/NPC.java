@@ -1,6 +1,6 @@
 package com.exortions.pluginutils.npc;
 
-import com.exortions.pluginutils.mojang.SkinUtils;
+import com.exortions.pluginutils.mojang.SkinAPI;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import lombok.Getter;
@@ -50,7 +50,7 @@ public class NPC {
         npc = new EntityPlayer(server, world, profile, new PlayerInteractManager(world));
 
         try {
-            String[] skin = SkinUtils.getSkin(skinOwner);
+            String[] skin = SkinAPI.getSkin(skinOwner);
             profile.getProperties().put("textures", new Property("textures", skin[0], skin[1]));
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,7 +65,7 @@ public class NPC {
      * @throws IOException If the InputStreamReader couldn't be read.
      */
     public void setNpcSkin(@NotNull String owner) throws IOException {
-        String[] skin = SkinUtils.getSkin(owner);
+        String[] skin = SkinAPI.getSkin(owner);
         profile.getProperties().put("textures", new Property("textures", skin[0], skin[1]));
     }
 
@@ -75,7 +75,7 @@ public class NPC {
      * @throws IOException If the InputStreamReader couldn't be read.
      */
     public void setNpcSkin(@NotNull Player owner) throws IOException {
-        String[] skin = SkinUtils.getSkin(owner);
+        String[] skin = SkinAPI.getSkin(owner);
         profile.getProperties().put("textures", new Property("textures", skin[0], skin[1]));
     }
 

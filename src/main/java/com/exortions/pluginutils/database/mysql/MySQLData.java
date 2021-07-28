@@ -25,7 +25,6 @@ public class MySQLData {
 		this.password = password;
 	}
 
-
 	public String getHost() {
 		return host;
 	}

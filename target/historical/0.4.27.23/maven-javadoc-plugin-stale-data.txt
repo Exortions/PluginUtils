@@ -20,13 +20,13 @@
 -docencoding
 'UTF-8'
 -doctitle
-'PluginUtils 0.4.30.23 API'
+'PluginUtils 0.4.30.24 API'
 -linkoffline
 'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/quade/Documents/Code/PluginUtils/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
-'PluginUtils 0.4.30.23 API'
+'PluginUtils 0.4.30.24 API'
 com.exortions.pluginutils.actionbar
 com.exortions.pluginutils.annotation
 com.exortions.pluginutils.bossbar
@@ -88,7 +88,7 @@ com.exortions.pluginutils.world
 'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/gui/GUIContainer.java'
 'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/item/ItemBuilder.java'
 'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/listener/ListenerUtils.java'
-'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/mojang/SkinUtils.java'
+'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/mojang/SkinAPI.java'
 'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/npc/NPC.java'
 'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/npc/PacketReader.java'
 'C:/Users/quade/Documents/Code/PluginUtils/src/main/java/com/exortions/pluginutils/npc/PlayerLeftClickNPCEvent.java'
@@ -112,16 +112,16 @@ C:\Users\quade\.m2\repository\org\jetbrains\annotations\21.0.1\annotations-21.0.
 C:\Users\quade\.m2\repository\org\reflections\reflections\0.9.12\reflections-0.9.12.jar = 1624981441361
 C:\Users\quade\.m2\repository\org\javassist\javassist\3.26.0-GA\javassist-3.26.0-GA.jar = 1624981441438
 C:\Users\quade\Documents\Code\PluginUtils\src\main\java = 1626642138150
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-frame.html = 1627246267898
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-noframe.html = 1627246267899
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\constant-values.html = 1627246267496
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\deprecated-list.html = 1627246267895
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\help-doc.html = 1627246267905
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index-all.html = 1627246267891
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index.html = 1627246267901
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-frame.html = 1627246267210
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-summary.html = 1627246267903
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-tree.html = 1627246267852
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\package-list = 1627246267207
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\script.js = 1627246267906
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-frame.html = 1627435238689
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-noframe.html = 1627435238691
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\constant-values.html = 1627435238239
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\deprecated-list.html = 1627435238678
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\help-doc.html = 1627435238697
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index-all.html = 1627435238673
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index.html = 1627435238693
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-frame.html = 1627435238042
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-summary.html = 1627435238695
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-tree.html = 1627435238631
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\package-list = 1627435238039
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\script.js = 1627435238699
 C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\stylesheet.css = 1627186312850

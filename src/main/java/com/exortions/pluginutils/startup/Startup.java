@@ -1,6 +1,7 @@
 package com.exortions.pluginutils.startup;
 
 import com.exortions.pluginutils.plugin.MinecraftPlugin;
+import com.exortions.pluginutils.plugin.SpigotPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
@@ -55,26 +56,22 @@ public class Startup {
 
     /**
      * Logs when the plugin is enabled.
-     * @param logger The Bukkit logger.
      * @param plugin The spigot plugin.
      */
-    public static void logEnable(@NotNull Logger logger, @NotNull JavaPlugin plugin){
-        if (!(plugin instanceof MinecraftPlugin)) return;
-        logger.log(Level.INFO, " ");
-        logger.log(Level.INFO, "" + ChatColor.GREEN + ChatColor.BOLD + "[" + ((MinecraftPlugin) plugin).getPluginName() + "] Plugin enabled!");
-        logger.log(Level.INFO, "");
+    public static void logEnable(@NotNull SpigotPlugin plugin){
+        Bukkit.getConsoleSender().sendMessage("");
+        Bukkit.getConsoleSender().sendMessage("" + ChatColor.GREEN + ChatColor.BOLD + "[" + plugin.getPluginName() + "] Plugin enabled!");
+        Bukkit.getConsoleSender().sendMessage("");
     }
 
     /**
      * Logs when the plugin is disabled.
-     * @param logger The Bukkit logger.
      * @param plugin The spigot plugin.
      */
-    public static void logDisable(@NotNull Logger logger, @NotNull JavaPlugin plugin){
-        if (!(plugin instanceof MinecraftPlugin)) return;
-        logger.log(Level.INFO, " ");
-        logger.log(Level.INFO, "" + ChatColor.RED + ChatColor.BOLD + "[" + ((MinecraftPlugin) plugin).getPluginName()+ "] Plugin disabled!");
-        logger.log(Level.INFO, "");
+    public static void logDisable(@NotNull SpigotPlugin plugin){
+        Bukkit.getConsoleSender().sendMessage(" ");
+        Bukkit.getConsoleSender().sendMessage("" + ChatColor.RED + ChatColor.BOLD + "[" + plugin.getPluginName()+ "] Plugin disabled!");
+        Bukkit.getConsoleSender().sendMessage("");
     }
 
 }

@@ -4,6 +4,7 @@ import com.exortions.pluginutils.chat.ChatUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.JavaVersion;
 import org.bukkit.entity.Player;
 
 import java.util.List;

@@ -45,12 +45,12 @@ public class ExamplePlugin extends SpigotPlugin implements Listener {
         CommandUtils.registerCommands(this, ".commands");
         // Automatically register all listeners in .listeners package
         ListenerUtils.registerAllListeners(this, ".listeners", Bukkit.getPluginManager());
-        Startup.logEnable(Bukkit.getLogger(), this);
+        Startup.logEnable(this);
     }
 
     @Override
     public void onDisable() {
-        Startup.logDisable(Bukkit.getLogger(), this);
+        Startup.logDisable(this);
     }
 
     @Override
