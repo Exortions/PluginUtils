@@ -4,10 +4,14 @@ com.exortions.pluginutils.bossbar
 com.exortions.pluginutils.chat
 com.exortions.pluginutils.collection
 com.exortions.pluginutils.command
+com.exortions.pluginutils.command.subcommand
+com.exortions.pluginutils.command.tabcomplete
 com.exortions.pluginutils.config
-com.exortions.pluginutils.database
-com.exortions.pluginutils.database.mysql
-com.exortions.pluginutils.database.sqlite
+com.exortions.pluginutils.database.v1
+com.exortions.pluginutils.database.v2
+com.exortions.pluginutils.database.v2.mysql
+com.exortions.pluginutils.database.v2.sqlite
+com.exortions.pluginutils.database.v3
 com.exortions.pluginutils.entity
 com.exortions.pluginutils.event
 com.exortions.pluginutils.example

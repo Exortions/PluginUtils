@@ -37,6 +37,7 @@ public class Actionbar {
 
     /**
      * Gets the text of the Action bar.
+     * @return The text
      */
     public String getText() {
         return text;

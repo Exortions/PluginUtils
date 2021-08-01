@@ -3,10 +3,15 @@
   <groupId>com.exortions</groupId>
   <artifactId>ExosPluginUtils</artifactId>
   <versioning>
-    <release>0.4.30.23</release>
+    <release>1.4.31.26</release>
     <versions>
       <version>0.4.30.23</version>
+      <version>0.4.30.24</version>
+      <version>0.4.30.25</version>
+      <version>0.4.31.25</version>
+      <version>1.4.31.25</version>
+      <version>1.4.31.26</version>
     </versions>
-    <lastUpdated>20210725215448</lastUpdated>
+    <lastUpdated>20210801055819</lastUpdated>
   </versioning>
 </metadata>

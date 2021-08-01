@@ -8,6 +8,6 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public abstract class SpigotPlugin extends JavaPlugin implements MinecraftPlugin {
 
-    public static SpigotPlugin instance;
+    public SpigotPlugin instance;
 
 }
