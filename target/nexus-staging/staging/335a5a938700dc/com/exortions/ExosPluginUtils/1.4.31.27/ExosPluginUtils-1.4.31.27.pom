@@ -6,7 +6,7 @@
 
     <groupId>com.exortions</groupId>
     <artifactId>ExosPluginUtils</artifactId>
-    <version>1.4.31.25</version>
+    <version>1.4.31.27</version>
     <packaging>jar</packaging>
 
     <name>PluginUtils</name>

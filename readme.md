@@ -22,6 +22,7 @@
 
 <h3 align="center">PluginUtils</h3>
 
+  <p align="center">Latest Version: 1.4.31.27</p>
   <p align="center">
     PluginUtils is a simple, easy-to-use
             library that saves many Minecraft Spigot developers a lot of time when creating
