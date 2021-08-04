@@ -33,6 +33,12 @@ public class ExamplePlugin extends SpigotPlugin implements Listener {
     public void onEnable() {
         // Check if ProtocolLib and PlaceholderAPI exist.
         Startup.loadDependencyInjections(this, Bukkit.getLogger(), Bukkit.getPluginManager(), "ProtocolLib", "PlaceholderAPI");
+        new UpdateChecker(this, 11111).getLatestVersion(version -> {
+            if (!getDescription().getVersion().equalsIgnoreCase(version)) {
+                Bukkit.getLogger().log(Level.INFO, "ExamplePlugin has an update! You are running version: " + getDescription().getVersion() + ", Latest version: " + version);
+                Bukkit.getLogger().log(Level.INFO, "Update Link: www.spigotmc.org/resources/exampleplugin.11111/");
+            }
+        });
 
         plugin = this;
 
@@ -41,12 +47,7 @@ public class ExamplePlugin extends SpigotPlugin implements Listener {
         explosiveStickCooldowns = new HashMap<>();
         npcs = new ArrayList<>();
 
-        new UpdateChecker(this, 11111).getLatestVersion(version -> {
-           if (!getDescription().getVersion().equalsIgnoreCase(version)) {
-               Bukkit.getLogger().log(Level.INFO, "ExamplePlugin has an update! You are running version: " + getDescription().getVersion() + ", Latest version: " + version);
-               Bukkit.getLogger().log(Level.INFO, "Update Link: www.spigotmc.org/resources/exampleplugin.11111/");
-           }
-        });
+
 
         // Automatically register all commands in .commands package
         CommandUtils.registerCommands(this, ".commands");

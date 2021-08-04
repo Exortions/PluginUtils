@@ -6,11 +6,11 @@
 
     <groupId>com.exortions</groupId>
     <artifactId>ExosPluginUtils</artifactId>
-    <version>1.4.31.26</version>
+    <version>1.4.31.27</version>
     <packaging>jar</packaging>
 
     <name>PluginUtils</name>
-    <description>ExosPluginUtils, or PluginUtils for short, is a simple, easy-to-use
+    <description>PluginUtils is a simple, easy-to-use
             library that saves many Minecraft Spigot developers a lot of time when creating
             plugins. It allows Spigot developers to create a lot of NMS
             (net.minecraft.server) and Spigot things like Tablists, Scoreboards, etc, as well as MySQL and SQLite support,

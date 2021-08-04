@@ -20,13 +20,13 @@
 -docencoding
 'UTF-8'
 -doctitle
-'PluginUtils 1.4.31.26 API'
+'PluginUtils 1.4.31.27 API'
 -linkoffline
 'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/quade/Documents/Code/PluginUtils/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
-'PluginUtils 1.4.31.26 API'
+'PluginUtils 1.4.31.27 API'
 com.exortions.pluginutils.actionbar
 com.exortions.pluginutils.annotation
 com.exortions.pluginutils.bossbar
@@ -126,17 +126,17 @@ C:\Users\quade\.m2\repository\org\jetbrains\annotations\21.0.1\annotations-21.0.
 C:\Users\quade\.m2\repository\org\reflections\reflections\0.9.12\reflections-0.9.12.jar = 1624981441361
 C:\Users\quade\.m2\repository\org\javassist\javassist\3.26.0-GA\javassist-3.26.0-GA.jar = 1624981441438
 C:\Users\quade\Documents\Code\PluginUtils\src\main\java = 1626642138150
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-frame.html = 1627797471651
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-noframe.html = 1627797471653
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\constant-values.html = 1627797471195
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\deprecated-list.html = 1627797471649
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\help-doc.html = 1627797471660
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index-all.html = 1627797471644
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index.html = 1627797471655
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-frame.html = 1627797470957
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-summary.html = 1627797471658
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-tree.html = 1627797471568
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\package-list = 1627797470954
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\script.js = 1627797471662
-C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\serialized-form.html = 1627797471204
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-frame.html = 1627864747039
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\allclasses-noframe.html = 1627864747040
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\constant-values.html = 1627864746597
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\deprecated-list.html = 1627864747035
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\help-doc.html = 1627864747048
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index-all.html = 1627864747031
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\index.html = 1627864747042
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-frame.html = 1627864746265
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-summary.html = 1627864747045
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\overview-tree.html = 1627864746993
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\package-list = 1627864746260
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\script.js = 1627864747050
+C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\serialized-form.html = 1627864746607
 C:\Users\quade\Documents\Code\PluginUtils\target\apidocs\stylesheet.css = 1627186312850

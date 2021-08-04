@@ -1,9 +1,6 @@
 package com.exortions.pluginutils.collection;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Exortions
@@ -26,6 +23,17 @@ public class CollectionUtils {
             }
         }
         return array;
+    }
+
+    public static String[] subArray(String[] array) {
+        List<String> ls = new ArrayList<>(Arrays.asList(array));
+        ls.remove(0);
+        String str = "";
+        for (String s : ls) {
+            str = str.concat(s + " ");
+        }
+        str = str.substring(0, str.length()-1);
+        return str.split("\\s");
     }
 
 }
