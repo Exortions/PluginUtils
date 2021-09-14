@@ -36,4 +36,14 @@ public class CollectionUtils {
         return str.split("\\s");
     }
 
+    public void command() {
+        String[] args = null;
+        String str = "";
+        for (String s : args) {
+            str = str.concat(s + " ");
+        }
+        str = str.substring(0, str.length()-1);
+
+    }
+
 }

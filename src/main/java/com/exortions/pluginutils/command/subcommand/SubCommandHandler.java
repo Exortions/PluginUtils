@@ -22,13 +22,16 @@ public abstract class SubCommandHandler implements CommandExecutor {
     @Getter
     private CommandSender sender;
 
+    @Setter
     private Runnable onlyPlayers;
+    @Setter
     private Runnable noArguments;
+    @Setter
     private Runnable noPermission;
+    @Setter
     private Runnable subComandNotFound;
 
-
-    public void construct(Runnable onlyPlayers, Runnable noArguments, Runnable noPermission, Runnable subCommandNotFound) {
+    public SubCommandHandler(Runnable onlyPlayers, Runnable noArguments, Runnable noPermission, Runnable subCommandNotFound) {
         this.onlyPlayers = onlyPlayers;
         this.noArguments = noArguments;
         this.noPermission = noPermission;

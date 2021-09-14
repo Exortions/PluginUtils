@@ -2,7 +2,6 @@ package com.exortions.pluginutils.world;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.libs.org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
